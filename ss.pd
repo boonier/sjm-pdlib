@@ -1,0 +1,25 @@
+#N canvas 628 257 690 481 10;
+#X obj 41 43 inlet~;
+#X obj 102 46 loadbang;
+#X obj 101 115 cnv 15 95 24 empty empty empty 20 12 0 14 -258113 -66577
+0;
+#X obj 104 119 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 121 119 cnv 15 70 15 empty \$0-ss-r -0.000521951 2 8 0 10 -262144
+-66577 0;
+#X obj 105 185 snapshot~;
+#X obj 285 271 print;
+#X obj 105 209 l2s;
+#X obj 285 243 makefilename %06d;
+#X obj 105 242 pack s \$0;
+#X msg 105 275 \; \$2-ss-r label \$1;
+#X obj 104 150 metro 100;
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
+#X connect 3 0 11 0;
+#X connect 5 0 7 0;
+#X connect 7 0 9 0;
+#X connect 8 0 6 0;
+#X connect 9 0 10 0;
+#X connect 11 0 5 0;
+#X coords 0 -1 1 1 97 40 1 100 100;

@@ -1,0 +1,21 @@
+#N canvas 15 22 739 561 10;
+#X obj 101 101 cnv 15 16 16 empty \$0-color-test • 2 8 0 20 -1 -1
+0;
+#X obj 151 -127 inlet on/off;
+#X msg 496 14 \; \$1-color-test color 22 13;
+#X obj 496 -13 pack \$0;
+#X obj 103 -28 pack \$0;
+#X msg 103 -5 \; \$1-color-test color 22 22;
+#X obj 347 64 pack \$0;
+#X obj 164 -69 sel 0 1 2;
+#X msg 348 91 \; \$1-color-test color 22 16;
+#X obj 80 -80 loadbang;
+#X connect 1 0 7 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 6 0 8 0;
+#X connect 7 0 4 0;
+#X connect 7 1 6 0;
+#X connect 7 2 3 0;
+#X connect 9 0 4 0;
+#X coords 0 -1 1 1 18 18 2 100 100;

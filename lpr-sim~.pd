@@ -1,0 +1,64 @@
+#N canvas 570 22 655 543 10;
+#X obj 117 72 tgl 15 0 empty empty lp 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 54 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1 -1
+;
+#X obj 117 238 b;
+#X obj 117 217 spigot;
+#X obj 233 182 cnv 15 200 200 empty empty load_sample 8 12 0 11 -233017
+-66577 0;
+#X obj 256 310 pack s s;
+#X obj 319 252 loadbang;
+#X obj 255 256 openpanel;
+#X obj 250 227 r \$0-open;
+#X obj 16 192 tabplay~ \$0-sample;
+#X obj 152 72 bng 15 250 50 0 \$0-open empty open 17 7 0 10 -13330
+-262144 -1;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-sample 1.23238e+06 float 2;
+#X coords 0 1 1.23238e+06 -1 138 40 1;
+#X restore 53 105 graph;
+#X obj 313 310 print;
+#X obj 391 249 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 318 279 symbol \$0-sample;
+#X msg 255 335 read -resize \$1 \$2;
+#X obj 255 358 soundfiler;
+#X obj 38 374 outlet~;
+#X obj 37 329 *~;
+#X obj 50 310 line~;
+#X text 98 307 envelope;
+#X text 98 318 generator;
+#X obj 37 348 hip~ 5;
+#X obj 72 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X obj 7 145 t b b;
+#X msg 50 269 1 5;
+#X msg 66 290 0 5;
+#X obj 55 3 r mstr-start;
+#X obj 56 24 sel 1 0;
+#X connect 0 0 3 1;
+#X connect 1 0 24 0;
+#X connect 2 0 9 0;
+#X connect 3 0 2 0;
+#X connect 5 0 15 0;
+#X connect 5 0 12 0;
+#X connect 6 0 14 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 0;
+#X connect 9 0 18 0;
+#X connect 9 1 3 0;
+#X connect 13 0 14 0;
+#X connect 14 0 5 1;
+#X connect 15 0 16 0;
+#X connect 18 0 22 0;
+#X connect 19 0 18 1;
+#X connect 22 0 17 0;
+#X connect 23 0 26 0;
+#X connect 24 0 9 0;
+#X connect 24 1 25 0;
+#X connect 25 0 19 0;
+#X connect 26 0 19 0;
+#X connect 27 0 28 0;
+#X connect 28 0 1 0;
+#X connect 28 1 23 0;
+#X coords 0 -1 1 1 145 100 1 50 50;

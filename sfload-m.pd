@@ -1,0 +1,53 @@
+#N canvas 710 154 577 395 10;
+#X obj 372 112 openpanel;
+#X obj 400 258 soundfiler;
+#X obj 400 203 pack s s;
+#X msg 400 236 read -resize \$1 \$2;
+#X obj 400 301 outlet;
+#X obj 177 120 bng 16 250 50 0 empty empty empty 17 7 0 10 -258113
+-262144 -1;
+#X obj 445 177 symbol \$1;
+#X obj 400 279 f;
+#X obj 158 120 bng 16 250 50 0 empty empty empty 17 7 0 10 -159808
+-262144 -1;
+#X floatatom 104 120 8 0 0 0 - - -;
+#X msg 372 89 symbol /Pd-bounce;
+#X obj 302 253 / 44100;
+#X obj 447 14 loadbang;
+#X obj 101 73 table \$1;
+#X obj 7 248 auto \$0-filename \$1-filename-r;
+#X obj 372 167 symbol;
+#X obj 304 139 r \$1-filename-r;
+#X obj 304 197 s \$0-filename;
+#X obj 195 120 vradio 8 1 0 2 \$0-path \$1-path-r empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 205 120 cnv 8 40 8 empty labelcnv Samples 2 4 1 9 -228856 -66577
+0;
+#X obj 205 129 cnv 8 40 8 empty labelcnv Bounce 2 4 1 9 -228856 -66577
+0;
+#X obj 282 2 r \$0-path;
+#X msg 256 90 symbol /Samples;
+#X obj 267 29 f;
+#X obj 269 54 sel 0 1;
+#X obj 7 271 auto \$0-path \$1-path-r;
+#X connect 0 0 15 0;
+#X connect 1 0 7 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 5 0 23 0;
+#X connect 6 0 2 1;
+#X connect 7 0 4 0;
+#X connect 7 0 11 0;
+#X connect 8 0 7 0;
+#X connect 10 0 0 0;
+#X connect 11 0 9 0;
+#X connect 12 0 6 0;
+#X connect 15 0 2 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 0;
+#X connect 21 0 23 1;
+#X connect 22 0 0 0;
+#X connect 23 0 24 0;
+#X connect 24 0 22 0;
+#X connect 24 1 10 0;
+#X coords 0 -1 1 1 147 40 1 100 100;

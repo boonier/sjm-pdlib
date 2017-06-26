@@ -1,0 +1,33 @@
+#N canvas 730 67 468 449 10;
+#X obj 40 161 *~ -1;
+#X obj 40 209 min~;
+#X obj 40 181 +~ 1;
+#X obj 39 234 *~ 4;
+#X obj 39 259 -~ 1;
+#X obj 200 34 inlet;
+#X obj 38 285 outlet~;
+#X obj 16 14 inlet~;
+#X obj 62 47 loadbang;
+#X obj 38 131 phasor~ 440;
+#X obj 62 75 \$1;
+#X obj 63 96 sig~;
+#X obj 102 318 Scope~ 130 130 256 3 128 -1 1 0 0 0 0 102 255 51 135
+135 135 0;
+#X obj 92 159 *~;
+#X obj 125 160 nbx 5 14 -1e+37 1e+37 0 0 empty up-slope empty 0 -8
+0 10 -262144 -1 -1 -1 256;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 0 12 0;
+#X connect 5 0 9 1;
+#X connect 7 0 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 0 0;
+#X connect 9 0 13 0;
+#X connect 10 0 11 0;
+#X connect 11 0 9 0;
+#X connect 13 0 1 1;
+#X connect 14 0 13 1;

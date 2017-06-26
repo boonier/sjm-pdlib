@@ -1,0 +1,21 @@
+#N canvas 601 158 839 742 10;
+#X obj 187 277 phasor~;
+#X obj 212 320 -~;
+#X obj 243 277 phasor~;
+#X obj 213 379 outlet~;
+#X obj 186 237 sig~;
+#X obj 108 120 hsl 70 15 0 8 0 0 empty empty rate 23 7 0 10 -262144
+-1 -1 0 1;
+#X obj 242 249 +~ 0.1;
+#X obj 202 171 mtof~;
+#X obj 202 130 inlet~;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 1;
+#X connect 4 0 0 0;
+#X connect 5 0 6 1;
+#X connect 6 0 2 0;
+#X connect 7 0 4 0;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X coords 0 -1 1 1 85 60 1 100 100;

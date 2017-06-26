@@ -1,0 +1,94 @@
+#N canvas 223 208 1217 692 10;
+#X obj 107 135 hsl 67 15 0 1 0 1 \$0-depth \$1-depth-r moddepth 15
+8 0 10 -59008 -191407 -262144 5700 1;
+#X obj 107 185 hsl 67 15 0 1 0 1 \$0-mix \$1-mix-r mix 15 8 0 10 -225271
+-1 -1 1300 1;
+#X obj 107 117 hsl 67 15 0 10 0 1 \$0-freq \$1-freq-r freq 15 8 0 10
+-112896 -191407 -262144 100 1;
+#X obj 90 218 auto \$0-freq \$1-freq-r;
+#X obj 90 240 auto \$0-depth \$1-depth-r;
+#X obj 290 94 inlet~;
+#X obj 312 183 rpole~;
+#X obj 312 158 rzero_rev~;
+#X obj 312 232 rpole~;
+#X obj 312 207 rzero_rev~;
+#X obj 312 280 rpole~;
+#X obj 312 255 rzero_rev~;
+#X obj 312 329 rpole~;
+#X obj 312 304 rzero_rev~;
+#X obj 289 459 +~;
+#X obj 289 522 outlet~;
+#X obj 619 236 r \$0-freq;
+#X obj 619 267 phasor~ 0.3;
+#X text 555 185 replacement for: expr~ 1 - 0.03 - 0.6*abs($v1-0.5)*abs($v1-0.5)
+;
+#X obj 561 267 sig~ 1;
+#X obj 561 293 -~;
+#X obj 562 337 min~;
+#X obj 562 362 *~;
+#X obj 486 416 -~;
+#X obj 487 386 sig~ 0.97;
+#X obj 622 356 line~;
+#X obj 705 306 loadbang;
+#X obj 705 327 f 0.6;
+#X obj 562 389 *~;
+#X obj 622 301 r \$0-depth;
+#X obj 622 327 pack 0 10;
+#N canvas 228 198 627 317 LICENSE-BSD 0;
+#X text 121 56 This software is copyrighted by Miller Puckette \, Reality
+Jockey Ltd. and others. The terms (the "Standard Improved BSD License")
+apply to all files associated with the software unless explicitly disclaimed
+in individual files.;
+#X text 123 148 See the file LICENSE.txt for the full license text.
+;
+#X restore 943 75 pd LICENSE-BSD;
+#X obj 312 379 rpole~;
+#X obj 312 354 rzero_rev~;
+#X obj 312 429 rpole~;
+#X obj 312 404 rzero_rev~;
+#X text 940 99 nabbed from rj lib;
+#X obj 289 491 hip~ 5;
+#X connect 5 0 7 0;
+#X connect 5 0 14 0;
+#X connect 6 0 9 0;
+#X connect 7 0 6 0;
+#X connect 8 0 11 0;
+#X connect 9 0 8 0;
+#X connect 10 0 13 0;
+#X connect 11 0 10 0;
+#X connect 12 0 33 0;
+#X connect 13 0 12 0;
+#X connect 14 0 37 0;
+#X connect 16 0 17 0;
+#X connect 17 0 21 1;
+#X connect 17 0 20 1;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 21 0 22 1;
+#X connect 22 0 28 0;
+#X connect 23 0 7 1;
+#X connect 23 0 6 1;
+#X connect 23 0 9 1;
+#X connect 23 0 8 1;
+#X connect 23 0 11 1;
+#X connect 23 0 10 1;
+#X connect 23 0 13 1;
+#X connect 23 0 12 1;
+#X connect 23 0 33 1;
+#X connect 23 0 32 1;
+#X connect 23 0 35 1;
+#X connect 23 0 34 1;
+#X connect 24 0 23 0;
+#X connect 25 0 28 1;
+#X connect 26 0 27 0;
+#X connect 27 0 25 0;
+#X connect 28 0 23 1;
+#X connect 29 0 30 0;
+#X connect 30 0 25 0;
+#X connect 32 0 35 0;
+#X connect 33 0 32 0;
+#X connect 34 0 14 1;
+#X connect 35 0 34 0;
+#X connect 37 0 15 0;
+#X coords 0 -1 1 1 80 56 1 100 100;

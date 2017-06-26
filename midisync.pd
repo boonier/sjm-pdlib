@@ -1,0 +1,15 @@
+#N canvas 399 158 450 300 10;
+#X obj 110 69 midirealtimein;
+#X obj 110 91 sel 250 252;
+#X msg 107 149 1;
+#X msg 140 149 0;
+#X obj 107 199 outlet;
+#X obj 141 118 t b b;
+#X obj 181 150 s reset;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 5 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 5 1 6 0;
