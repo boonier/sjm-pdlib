@@ -1,6 +1,6 @@
-#N canvas 470 30 446 147 10;
-#X obj -6 -11 audio-sorter -------------------------------------;
-#X obj -68 27 8-trk \$1;
+#N canvas 470 30 506 245 10;
+#X obj 102 56 audio-sorter -------------------------------------;
+#X obj 38 93 8-trk \$1;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
 #X connect 0 2 1 2;

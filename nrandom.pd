@@ -1,4 +1,4 @@
-#N canvas 538 63 325 451 10;
+#N canvas 849 342 485 469 10;
 #X obj 35 66 random \$1;
 #X obj 64 352 mod \$1;
 #X obj 58 133 == -1;
@@ -20,6 +20,8 @@
 #X obj 94 254 random;
 #X obj 108 180 loadbang;
 #X obj 94 276 + 1;
+#X text 134 345 chooses a non-repeating random number when bang received
+;
 #X connect 0 0 13 0;
 #X connect 1 0 15 0;
 #X connect 2 0 3 1;

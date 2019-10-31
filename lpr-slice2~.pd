@@ -1,8 +1,8 @@
-#N canvas 104 32 1283 868 10;
+#N canvas 619 190 1283 868 10;
 #X obj 599 230 int;
 #X obj 594 66 + 1;
 #X obj 567 66 int;
-#N canvas 213 59 591 590 swingbox 0;
+#N canvas 675 89 591 590 swingbox 0;
 #X obj 48 141 alternate;
 #X obj 36 9 inlet;
 #X obj 33 284 outlet;
@@ -40,7 +40,7 @@
 #X connect 15 0 17 1;
 #X connect 16 0 2 0;
 #X connect 17 0 2 0;
-#X restore 567 41 pd swingbox;
+#X restore 444 42 pd swingbox;
 #X msg 675 40 0;
 #N canvas 380 83 371 424 \$0-midi-input 0;
 #X obj 78 64 notein;
@@ -183,7 +183,7 @@
 #X obj 256 201 t b b;
 #X obj 266 120 t b f f f;
 #X obj 83 202 spigot;
-#X obj 116 174 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+#X obj 116 174 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
 1;
 #X obj 116 150 > 1;
 #X obj 218 383 bng 15 50 10 0 empty empty empty 0 -6 0 10 -262144 -1
@@ -279,10 +279,10 @@
 #X restore 106 380 pd \$0-looper;
 #X obj 567 156 mod 16;
 #X obj 599 207 tabread \$0-diceRoll;
-#N canvas 276 22 1020 605 \$0-loop_buf 0;
+#N canvas 276 23 1020 605 \$0-loop_buf 0;
 #N canvas 0 22 458 308 (subpatch) 0;
-#X array \$0-buf 174873 float 2;
-#X coords 0 1 174873 -1 300 150 1;
+#X array \$0-buf 343218 float 2;
+#X coords 0 1 343218 -1 300 150 1;
 #X restore 57 83 graph;
 #X obj 562 36 openpanel;
 #X obj 524 178 soundfiler;
@@ -301,7 +301,7 @@
 #X obj 595 269 s \$0-num-beats;
 #X obj 595 218 expr ($f1/44.1);
 #X obj 727 292 nbx 5 14 -1e+37 1e+37 0 0 num-beats empty beats 0 -6
-2 15 -86853 -260097 -203904 8 256;
+2 15 -86853 -260097 -203904 16 256;
 #N canvas 159 113 390 373 beat-guesser 0;
 #X obj 62 98 moses 600;
 #X obj 113 120 moses 1200;
@@ -390,13 +390,13 @@
 #X restore 107 152 graph;
 #X symbolatom 124 257 21 0 0 0 - #0-filename-display -;
 #X obj 255 167 tgl 15 0 \$0-rev \$0-rev-r rev 18 7 0 10 -260097 -1
--1 1 1;
-#X obj 255 182 tgl 15 0 \$0-stutter \$0-stutter-r stut 18 7 0 10 -258113
--1 -1 1 1;
-#X obj 255 152 tgl 15 0 \$0-remix empty remix 18 7 0 10 -204800 -1
 -1 0 1;
+#X obj 255 182 tgl 15 0 \$0-stutter \$0-stutter-r stut 18 7 0 10 -258113
+-1 -1 0 1;
+#X obj 255 152 tgl 15 0 \$0-remix empty remix 18 7 0 10 -204800 -1
+-1 1 1;
 #X obj 107 244 hradio 9 1 0 16 empty \$0-locate-r empty 0 -8 0 10 -262144
--1 -1 6;
+-1 -1 1;
 #X floatatom 255 201 3 0 16 1 beats #1-beats-r #0-beats;
 #X obj 610 132 r \$0-beats;
 #X obj 567 19 r clock;
@@ -409,6 +409,7 @@
 #X obj 66 54 auto \$0-beats \$1-beats-r;
 #X obj 66 77 auto \$0-fill \$1-fill-r;
 #X restore 102 27 pd admin;
+#X obj 518 281 print;
 #X connect 0 0 22 1;
 #X connect 1 0 2 1;
 #X connect 2 0 1 0;
@@ -438,4 +439,5 @@
 #X connect 29 0 9 0;
 #X connect 37 0 7 1;
 #X connect 38 0 3 0;
+#X connect 38 0 2 0;
 #X coords 0 -1 1 1 220 180 1 100 100;

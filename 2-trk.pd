@@ -94,6 +94,7 @@
 #X connect 40 0 41 0;
 #X connect 40 0 8 1;
 #X connect 41 0 43 0;
+#X connect 41 0 4 0;
 #X connect 42 0 40 0;
 #X connect 43 0 4 0;
 #X coords 0 -1 1 1 146 50 2 100 100;

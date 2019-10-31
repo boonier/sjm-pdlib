@@ -26,23 +26,23 @@
 #X obj 174 244 nbx 5 14 0 100 0 0 \$0-syncdecay \$1-syncdecay-r sync_decay
 0 -6 0 10 -204793 -1 -1 46 256;
 #X obj 244 247 hsl 50 8 0 0.5 0 0 \$0-pw \$1-pw-r p/w -2 -6 0 10 -262144
--258113 -1 2600 1;
+-258113 -1 2400 1;
 #X obj 182 119 cnv 15 195 110 empty empty filter 5 12 0 10 -66577 -257985
 0;
 #X obj 188 152 vsl 8 50 0 2000 0 1 \$0-filtatt \$1-filtatt-r attack
 0 -8 1 9 -262144 -1 -191407 0 1;
 #X floatatom 188 208 5 0 0 0 - - -;
 #X obj 225 152 vsl 8 50 0 2000 0 1 \$0-filtdec \$1-filtdec-r decay
-0 -8 1 9 -262144 -1 -191407 1600 1;
+0 -8 1 9 -262144 -1 -191407 800 1;
 #X floatatom 225 208 5 0 0 0 - - -;
 #X obj 264 152 vsl 8 50 0 127 0 1 \$0-filtenv \$1-filtenv-r env 0 -8
-1 9 -262144 -1 -191407 2400 1;
+1 9 -262144 -1 -191407 2800 1;
 #X floatatom 264 208 5 0 0 0 - - -;
 #X obj 302 152 vsl 8 50 0 127 0 1 \$0-cutoff \$1-cutoff-r cutoff 0
--8 1 9 -262144 -1 -191407 2500 1;
+-8 1 9 -262144 -1 -191407 3000 1;
 #X floatatom 302 208 5 0 0 0 - - -;
 #X obj 341 152 vsl 8 50 0.04 4 1 0 \$0-res \$1-res-r res 0 -8 1 9 -262144
--1 -191407 2600 1;
+-1 -191407 600 1;
 #X floatatom 340 209 5 0 0 0 - - -;
 #X obj 435 490 line~;
 #X msg 435 468 \$1 50;
@@ -56,7 +56,7 @@
 -262144 -1 -191407 0 1;
 #X floatatom 109 208 5 0 0 0 - - -;
 #X obj 145 152 vsl 8 50 5 500 1 1 \$0-dec \$1-dec-r decay 0 -8 1 9
--262144 -1 -191407 4400 1;
+-262144 -1 -191407 4000 1;
 #X floatatom 145 208 5 0 0 0 - - -;
 #X obj 487 154 r \$0-syncdepth;
 #X obj 500 178 r \$0-syncdecay;
@@ -79,7 +79,6 @@
 #X obj 324 469 pink~;
 #X obj 323 494 *~ 0.01;
 #X obj 361 531 +~;
-#X obj 514 46 print;
 #X obj 80 357 auto \$0-att \$1-att-r;
 #X obj 79 381 auto \$0-dec \$1-dec-r;
 #X obj 81 428 auto \$0-filtatt \$1-filtatt-r;
@@ -106,7 +105,6 @@
 #X connect 13 0 5 0;
 #X connect 14 0 11 0;
 #X connect 15 0 58 0;
-#X connect 15 0 68 0;
 #X connect 17 0 20 0;
 #X connect 18 0 17 1;
 #X connect 19 0 17 0;
