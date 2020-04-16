@@ -15,53 +15,53 @@
 #X floatatom 363 219 3 0 0 0 - #1-#2-note-13-r #1-#2-note-13;
 #X floatatom 383 219 3 0 0 0 - #1-#2-note-14-r #1-#2-note-14;
 #X floatatom 403 219 3 0 0 0 - #1-#2-note-15-r #1-#2-note-15;
-#X obj 103 142 vsl 20 60 0 1 0 0 \$1-\$2-level-0 \$1-\$2-level-0-r
+#X obj 103 142 vsl 20 60 0 1 0 0 \$0-level-0.s \$0-level-0.r
 empty 0 -8 0 10 -228856 -1 -1 4425 0;
-#X obj 123 142 vsl 20 60 0 1 0 0 \$1-\$2-level-1 \$1-\$2-level-1-r
+#X obj 123 142 vsl 20 60 0 1 0 0 \$0-level-1.s \$0-level-1.r
 empty 0 -8 0 10 -262144 -1 -1 4425 0;
-#X obj 143 142 vsl 20 60 0 1 0 0 \$1-\$2-level-2 \$1-\$2-level-2-r
+#X obj 143 142 vsl 20 60 0 1 0 0 \$0-level-2.s \$0-level-2.r
 empty 0 -8 0 10 -262144 -1 -1 4425 0;
-#X obj 163 142 vsl 20 60 0 1 0 0 \$1-\$2-level-3 \$1-\$2-level-3-r
+#X obj 163 142 vsl 20 60 0 1 0 0 \$0-level-3.s \$0-level-3.r
 empty 0 -8 0 10 -262144 -1 -1 4425 0;
-#X obj 183 142 vsl 20 60 0 1 0 0 \$1-\$2-level-4 \$1-\$2-level-4-r
+#X obj 183 142 vsl 20 60 0 1 0 0 \$0-level-4.s \$0-level-4.r
 empty 0 -8 0 10 -228856 -1 -1 4425 0;
-#X obj 203 142 vsl 20 60 0 1 0 0 \$1-\$2-level-5 \$1-\$2-level-5-r
+#X obj 203 142 vsl 20 60 0 1 0 0 \$0-level-5.s \$0-level-5.r
 empty 0 -8 0 10 -262144 -1 -1 4425 0;
-#X obj 223 142 vsl 20 60 0 1 0 0 \$1-\$2-level-6 \$1-\$2-level-6-r
+#X obj 223 142 vsl 20 60 0 1 0 0 \$0-level-6.s \$0-level-6.r
 empty 0 -8 0 10 -262144 -1 -1 4425 0;
-#X obj 263 120 tgl 20 0 \$1-\$2-mute-8 \$1-\$2-mute-8-r empty 0 -6
+#X obj 263 120 tgl 20 0 \$0-mute-8.s \$0-mute-8.r empty 0 -6
 0 10 -228856 -62783 -1 0 1;
-#X obj 283 120 tgl 20 0 \$1-\$2-mute-9 \$1-\$2-mute-9-r empty 0 -6
+#X obj 283 120 tgl 20 0 \$0-mute-9.s \$0-mute-9.r empty 0 -6
 0 10 -262144 -62783 -1 0 1;
-#X obj 303 120 tgl 20 0 \$1-\$2-mute-10 \$1-\$2-mute-10-r empty 0 -6
+#X obj 303 120 tgl 20 0 \$0-mute-10.s \$0-mute-10.r empty 0 -6
 0 10 -262144 -62783 -1 0 1;
-#X obj 323 120 tgl 20 0 \$1-\$2-mute-11 \$1-\$2-mute-11-r empty 0 -6
+#X obj 323 120 tgl 20 0 \$0-mute-11.s \$0-mute-11.r empty 0 -6
 0 10 -262144 -62783 -1 0 1;
-#X obj 343 120 tgl 20 0 \$1-\$2-mute-12 \$1-\$2-mute-12-r empty 0 -6
+#X obj 343 120 tgl 20 0 \$0-mute-12.s \$0-mute-12.r empty 0 -6
 0 10 -228856 -62783 -1 0 1;
-#X obj 363 120 tgl 20 0 \$1-\$2-mute-13 \$1-\$2-mute-13-r empty 0 -6
+#X obj 363 120 tgl 20 0 \$0-mute-13.s \$0-mute-13.r empty 0 -6
 0 10 -262144 -62783 -1 0 1;
-#X obj 383 120 tgl 20 0 \$1-\$2-mute-14 \$1-\$2-mute-14-r empty 0 -6
+#X obj 383 120 tgl 20 0 \$0-mute-14.s \$0-mute-14.r empty 0 -6
 0 10 -262144 -62783 -1 0 1;
-#X obj 403 120 tgl 20 0 \$1-\$2-mute-15 \$1-\$2-mute-15-r empty 0 -6
+#X obj 403 120 tgl 20 0 \$0-mute-15.s \$0-mute-15.r empty 0 -6
 0 10 -262144 -62783 -1 0 1;
-#X obj 243 142 vsl 20 60 0 1 0 0 \$1-\$2-level-7 \$1-\$2-level-7-r
+#X obj 243 142 vsl 20 60 0 1 0 0 \$0-level-7.s \$0-level-7.r
 empty 0 -8 0 10 -262144 -1 -1 4425 0;
-#X obj 263 142 vsl 20 60 0 1 0 0 \$1-\$2-level-8 \$1-\$2-level-8-r
+#X obj 263 142 vsl 20 60 0 1 0 0 \$0-level-8.s \$0-level-8.r
 empty 0 -8 0 10 -228856 -1 -1 4425 0;
-#X obj 283 142 vsl 20 60 0 1 0 0 \$1-\$2-level-9 \$1-\$2-level-9-r
+#X obj 283 142 vsl 20 60 0 1 0 0 \$0-level-9.s \$0-level-9.r
 empty 0 -8 0 10 -262144 -1 -1 4425 0;
-#X obj 303 142 vsl 20 60 0 1 0 0 \$1-\$2-level-10 \$1-\$2-level-10-r
+#X obj 303 142 vsl 20 60 0 1 0 0 \$0-level-10.s \$0-level-10.r
 empty 0 -8 0 10 -262144 -1 -1 4425 0;
-#X obj 323 142 vsl 20 60 0 1 0 0 \$1-\$2-level-11 \$1-\$2-level-11-r
+#X obj 323 142 vsl 20 60 0 1 0 0 \$0-level-11.s \$0-level-11.r
 empty 0 -8 0 10 -262144 -1 -1 4425 0;
-#X obj 343 142 vsl 20 60 0 1 0 0 \$1-\$2-level-12 \$1-\$2-level-12-r
+#X obj 343 142 vsl 20 60 0 1 0 0 \$0-level-12.s \$0-level-12.r
 empty 0 -8 0 10 -228856 -1 -1 4425 0;
-#X obj 363 142 vsl 20 60 0 1 0 0 \$1-\$2-level-13 \$1-\$2-level-13-r
+#X obj 363 142 vsl 20 60 0 1 0 0 \$0-level-13.s \$0-level-13.r
 empty 0 -8 0 10 -262144 -1 -1 4425 0;
-#X obj 383 142 vsl 20 60 0 1 0 0 \$1-\$2-level-14 \$1-\$2-level-14-r
+#X obj 383 142 vsl 20 60 0 1 0 0 \$0-level-14.s \$0-level-14.r
 empty 0 -8 0 10 -262144 -1 -1 4425 0;
-#X obj 403 142 vsl 20 60 0 1 0 0 \$1-\$2-level-15 \$1-\$2-level-15-r
+#X obj 403 142 vsl 20 60 0 1 0 0 \$0-level-15.s \$0-level-15.r
 empty 0 -8 0 10 -262144 -1 -1 4425 0;
 #X obj 103 234 hradio 20 0 0 16 empty \$1-\$2-patt-pos empty 0 -6 0
 10 -262144 -66577 -33289 0;
@@ -256,21 +256,21 @@ empty 0 -8 0 10 -262144 -1 -1 4425 0;
 #X obj 565 18 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X text 491 36 flush table;
-#X obj 103 120 tgl 20 0 \$1-\$2-mute-0 \$1-\$2-mute-0-r empty 0 -6
+#X obj 103 120 tgl 20 0 \$0-mute-0.s \$0-mute-0.r empty 0 -6
 0 10 -228856 -62783 -1 0 1;
-#X obj 123 120 tgl 20 0 \$1-\$2-mute-1 \$1-\$2-mute-1-r empty 0 -6
+#X obj 123 120 tgl 20 0 \$0-mute-1.s \$0-mute-1.r empty 0 -6
 0 10 -262144 -62783 -1 0 1;
-#X obj 143 120 tgl 20 0 \$1-\$2-mute-2 \$1-\$2-mute-2-r empty 0 -6
+#X obj 143 120 tgl 20 0 \$0-mute-2.s \$0-mute-2.r empty 0 -6
 0 10 -262144 -62783 -1 0 1;
-#X obj 163 120 tgl 20 0 \$1-\$2-mute-3 \$1-\$2-mute-3-r empty 0 -6
+#X obj 163 120 tgl 20 0 \$0-mute-3.s \$0-mute-3.r empty 0 -6
 0 10 -262144 -62783 -1 0 1;
-#X obj 183 120 tgl 20 0 \$1-\$2-mute-4 \$1-\$2-mute-4-r empty 0 -6
+#X obj 183 120 tgl 20 0 \$0-mute-4.s \$0-mute-4.r empty 0 -6
 0 10 -228856 -62783 -1 0 1;
-#X obj 203 120 tgl 20 0 \$1-\$2-mute-5 \$1-\$2-mute-5-r empty 0 -6
+#X obj 203 120 tgl 20 0 \$0-mute-5.s \$0-mute-5.r empty 0 -6
 0 10 -262144 -62783 -1 0 1;
-#X obj 223 120 tgl 20 0 \$1-\$2-mute-6 \$1-\$2-mute-6-r empty 0 -6
+#X obj 223 120 tgl 20 0 \$0-mute-6.s \$0-mute-6.r empty 0 -6
 0 10 -262144 -62783 -1 0 1;
-#X obj 243 120 tgl 20 0 \$1-\$2-mute-7 \$1-\$2-mute-7-r empty 0 -6
+#X obj 243 120 tgl 20 0 \$0-mute-7.s \$0-mute-7.r empty 0 -6
 0 10 -262144 -62783 -1 0 1;
 #X obj 274 329 r \$1-patt1;
 #X obj 303 438 print;

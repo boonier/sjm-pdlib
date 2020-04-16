@@ -1,0 +1,25 @@
+#N canvas 732 34 466 454 10;
+#X obj 82 381 dac~;
+#X obj 70 31 tape2~;
+#A saved filename /Users/boonier/Dropbox/Audio Work/Renoise/Tracks/2019/[DST] AlgoStraits/[DST] AlgoStraits.wav
+;
+#A saved start 0;
+#A saved rate 0.91954;
+#A saved loopend 1;
+#A saved loopstart 0;
+#X obj 82 166 pvsfreeze~;
+#A saved auto 1;
+#A saved fftsize 5;
+#A saved lock-phs 0;
+#A saved freeze-frq 0;
+#A saved freeze-amp 0;
+#A saved freeze-bth 0;
+#A saved level 1;
+#A saved mix 0;
+#A saved delay 0.118039;
+#A saved thresh 0.239196;
+#X obj 333 70 stutter~;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 2 0 0 0;
+#X connect 2 1 0 1;

@@ -1,4 +1,4 @@
-#N canvas 223 208 1217 692 10;
+#N canvas 703 336 1217 692 10;
 #X obj 313 267 cos~;
 #X obj 313 290 +~ 1;
 #X obj 400 211 +~ 0.25;
@@ -30,24 +30,44 @@
 #X obj 400 374 vd~ \$0-chorus;
 #X obj 499 370 vd~ \$0-chorus;
 #X obj 594 370 vd~ \$0-chorus;
-#X obj 107 135 hsl 67 15 0 100 0 1 \$0-depth \$1-depth-r moddepth 15
-8 0 10 -90603 -191407 -262144 483 1;
-#X obj 107 153 hsl 67 15 0 1 0 1 \$0-mix \$1-mix-r mix 15 8 0 10 -225271
--1 -1 2200 1;
-#X obj 107 117 hsl 67 15 0 20 0 1 \$0-freq \$1-freq-r freq 15 8 0 10
--152832 -191407 -262144 46 1;
+#X obj 107 137 hsl 67 18 0 100 0 1 \$0-depth.s \$0-depth.r depth 2
+9 0 10 -90603 -191407 -262144 600 1;
+#X obj 107 157 hsl 67 18 0 1 0 1 \$0-mix.s \$0-mix.r mix 2 9 0 10 -225271
+-1 -1 4800 1;
+#X obj 107 117 hsl 67 18 0.0001 20 1 1 \$0-freq.s \$0-freq.r freq 2
+9 0 10 -152832 -191407 -262144 700 1;
 #X msg 461 437 1 \$1;
 #X obj 461 462 -;
-#X obj 460 412 r \$0-mix;
 #X obj 358 480 *~;
 #X obj 530 475 *~;
 #X obj 400 479 *~;
 #X obj 577 476 *~;
-#X obj 440 112 r \$0-freq;
-#X obj 673 238 r \$0-depth;
-#X obj 90 195 auto \$0-mix \$1-mix-r;
-#X obj 90 218 auto \$0-freq \$1-freq-r;
-#X obj 90 240 auto \$0-depth \$1-depth-r;
+#N canvas 1195 491 725 391 store.state 0;
+#N canvas 81 45 329 237 read.write 0;
+#X obj 74 111 savestate;
+#X obj 74 91 r \$0-to.savestate;
+#X obj 125 131 s \$0-savestate.right;
+#X text 78 33 send and receive lists from the individual abstractions
+, f 27;
+#X obj 74 171 s \$0-savestate.left;
+#X obj 74 131 t a b;
+#X obj 101 151 s \$0-stop.loadbang;
+#X connect 0 0 5 0;
+#X connect 0 1 2 0;
+#X connect 1 0 0 0;
+#X connect 5 0 4 0;
+#X connect 5 1 6 0;
+#X restore 52 41 pd read.write;
+#X obj 52 91 store.param \$0 mix;
+#X obj 52 111 store.param \$0 depth;
+#X obj 52 131 store.param \$0 freq;
+#X obj 237 91 param-label \$0 mix;
+#X obj 237 111 param-label \$0 depth;
+#X obj 237 131 param-label \$0 freq;
+#X restore 101 64 pd store.state;
+#X obj 679 254 r \$0-depth.s;
+#X obj 442 116 r \$0-freq.s;
+#X obj 460 412 r \$0-mix.s;
 #X connect 0 0 1 0;
 #X connect 1 0 18 0;
 #X connect 2 0 3 0;
@@ -62,8 +82,8 @@
 #X connect 10 0 11 0;
 #X connect 11 0 15 0;
 #X connect 12 0 26 0;
+#X connect 12 0 38 0;
 #X connect 12 0 39 0;
-#X connect 12 0 40 0;
 #X connect 13 0 15 1;
 #X connect 13 0 16 1;
 #X connect 13 0 17 1;
@@ -77,20 +97,20 @@
 #X connect 20 0 19 0;
 #X connect 21 0 0 0;
 #X connect 21 0 2 0;
-#X connect 27 0 37 0;
-#X connect 28 0 38 0;
-#X connect 29 0 37 0;
-#X connect 30 0 38 0;
+#X connect 27 0 36 0;
+#X connect 28 0 37 0;
+#X connect 29 0 36 0;
+#X connect 30 0 37 0;
 #X connect 34 0 35 0;
-#X connect 35 0 40 1;
 #X connect 35 0 39 1;
-#X connect 36 0 34 0;
-#X connect 36 0 38 1;
-#X connect 36 0 37 1;
-#X connect 37 0 5 0;
-#X connect 38 0 22 0;
-#X connect 39 0 5 0;
-#X connect 40 0 22 0;
-#X connect 41 0 20 0;
-#X connect 42 0 14 0;
-#X coords 0 -1 1 1 80 72 1 100 100;
+#X connect 35 0 38 1;
+#X connect 36 0 5 0;
+#X connect 37 0 22 0;
+#X connect 38 0 5 0;
+#X connect 39 0 22 0;
+#X connect 41 0 14 0;
+#X connect 42 0 20 0;
+#X connect 43 0 34 0;
+#X connect 43 0 37 1;
+#X connect 43 0 36 1;
+#X coords 0 -1 1 1 80 80 1 100 100;

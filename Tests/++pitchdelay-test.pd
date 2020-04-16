@@ -1,0 +1,15 @@
+#N canvas 459 93 634 542 10;
+#X obj 90 135 ++pitchdelay~;
+#A saved lpdepth 42.0339;
+#A saved sync 1;
+#A saved octave 3;
+#A saved delvol 37.2881;
+#A saved dryvol 27.1186;
+#A saved feedback 64.4068;
+#A saved time 4067.98;
+#A saved factor 0;
+#X obj 258 186 s mstr-ms;
+#X obj 258 134 loadbang;
+#X msg 258 159 500, f 7;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;

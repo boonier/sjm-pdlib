@@ -1,0 +1,54 @@
+#N canvas 543 91 674 555 10;
+#X obj 244 289 csound6~ powershape.csd;
+#X obj 244 230 inlet~;
+#X obj 379 232 inlet~;
+#X obj 244 343 outlet~;
+#X obj 300 343 outlet~;
+#X obj 106 117 hsl 60 18 0.1 1000 1 0 \$0-amount.s \$0-amount.r amount
+2 9 0 10 -204786 -1 -1 1300 1;
+#X obj 106 137 hsl 60 18 0.0001 50 1 0 \$0-level.s \$0-level.r level
+2 9 0 10 -204786 -1 -1 5200 1;
+#X obj 103 157 tgl 15 0 \$0-test.s \$0-test.r tone 17 7 0 10 -262144
+-1 -1 0 1;
+#X msg 102 231 chnset amount \$1;
+#X msg 102 210 chnset level \$1;
+#X msg 102 272 reset;
+#X msg 102 252 chnset test \$1;
+#N canvas 571 487 725 391 store.state 0;
+#N canvas 81 45 329 237 read.write 0;
+#X obj 74 111 savestate;
+#X obj 74 91 r \$0-to.savestate;
+#X obj 125 131 s \$0-savestate.right;
+#X text 78 33 send and receive lists from the individual abstractions
+, f 27;
+#X obj 74 171 s \$0-savestate.left;
+#X obj 74 131 t a b;
+#X obj 101 151 s \$0-stop.loadbang;
+#X connect 0 0 5 0;
+#X connect 0 1 2 0;
+#X connect 1 0 0 0;
+#X connect 5 0 4 0;
+#X connect 5 1 6 0;
+#X restore 52 41 pd read.write;
+#X obj 52 111 store.param \$0 level;
+#X obj 237 111 param-label \$0 level;
+#X obj 52 91 store.param \$0 amount;
+#X obj 237 91 param-label \$0 amount;
+#X obj 52 131 store.param \$0 tone;
+#X restore 103 60 pd store.state;
+#X msg 102 328 messages 0;
+#X obj 102 303 loadbang;
+#X connect 0 0 3 0;
+#X connect 0 1 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 5 0 8 0;
+#X connect 6 0 9 0;
+#X connect 7 0 11 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 13 0 0 0;
+#X connect 14 0 13 0;
+#X coords 0 -1 1 1 71 75 1 100 100;

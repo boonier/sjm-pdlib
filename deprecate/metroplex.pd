@@ -1,18 +1,18 @@
-#N canvas 151 300 849 578 10;
+#N canvas 151 352 635 526 10;
 #X obj 64 19 inlet start;
 #X msg 196 168 0;
 #X obj 254 290 outlet mstr-ms;
 #X obj 22 183 metro 120;
-#X obj 259 19 loadbang;
+#X obj 149 19 loadbang;
 #X obj 13 134 s mstr-ms;
 #X obj 196 117 bng 15 250 50 0 reset empty empty 17 7 0 10 -258113
 -261234 -1;
 #X obj 104 117 tgl 15 0 \$0-foo \$0-foo-r empty 17 7 0 10 -262144 -1
--1 1 1;
+-1 0 1;
 #X obj 183 117 bng 10 50 50 0 * beat-led empty 17 7 0 10 -1 -258113
 -1;
 #X obj 196 190 s reset;
-#X obj 351 19 r poll-ms;
+#X obj 211 19 r poll-ms;
 #X obj 104 212 s mstr-start;
 #X obj -40 19 midirealtimein;
 #X obj -39 49 sel 250 252;
@@ -104,14 +104,14 @@
 #X connect 20 0 8 0;
 #X restore 22 206 pd swing;
 #X floatatom 159 117 3 0 50 0 - #1-swing-amt-r #0-swing-amt;
-#X obj 596 51 auto \$0-swing-amt \$1-swing-amt-r;
-#X obj 259 61 \$2;
-#X obj 597 72 auto \$0-bpm \$1-bpm-r;
+#X obj 386 51 auto \$0-swing-amt \$1-swing-amt-r;
+#X obj 149 48 \$2;
+#X obj 387 72 auto \$0-bpm \$1-bpm-r;
 #X obj 76 48 r \$0-bpm;
 #X obj 121 117 nbx 3 15 1 999 0 0 \$0-bpm \$1-bpm-r empty 0 -8 0 10
 -262144 -1 -1 123 256;
-#X text 595 24 sssad.id | bpm | # beats| # bar;
-#X obj 423 19 inlet reset;
+#X text 385 24 sssad.id | bpm | # beats| # bar;
+#X obj 283 19 inlet reset;
 #X obj 351 289 outlet bpm;
 #X obj 423 261 expr 60000/($f1*24);
 #X obj 423 290 outlet midi-tick-ms;
@@ -120,11 +120,10 @@
 #X text 101 155 make tick 16ths;
 #X obj 370 230 s mstr-bpm;
 #X obj 351 193 t f f f;
-#X obj 204 34 t b b;
 #X connect 0 0 7 0;
 #X connect 1 0 9 0;
 #X connect 3 0 23 0;
-#X connect 4 0 40 0;
+#X connect 4 0 26 0;
 #X connect 6 0 1 0;
 #X connect 6 0 35 0;
 #X connect 7 0 3 0;
@@ -154,6 +153,4 @@
 #X connect 39 0 32 0;
 #X connect 39 1 38 0;
 #X connect 39 2 33 0;
-#X connect 40 0 29 0;
-#X connect 40 1 26 0;
 #X coords 0 -1 1 1 115 38 1 100 100;
