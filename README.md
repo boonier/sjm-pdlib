@@ -1,3 +1,3 @@
 # sjm-pdlib
 
-my library of useful stuff of Pd
+A library of useful stuff for Pure Data.
