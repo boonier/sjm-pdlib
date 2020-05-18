@@ -1,5 +1,5 @@
-#N canvas 751 166 835 756 10;
-#X obj 392 623 *~;
+#N canvas 605 122 835 756 10;
+#X obj 395 629 *~;
 #X obj 441 226 f;
 #X obj 388 398 wrap~;
 #X obj 388 374 *~;
@@ -15,18 +15,18 @@
 #X obj 441 297 line~;
 #X obj 441 248 pack f f;
 #X obj 414 20 inlet;
-#X obj 396 673 outlet~;
+#X obj 395 679 outlet~;
 #X obj 420 546 *~;
 #X obj 435 514 mtof~;
 #X obj 567 450 ead~ 25 1000;
 #X obj 421 571 +~;
 #X obj 481 525 mtof~;
 #X obj 105 245 nbx 5 14 0 100 0 0 \$0-syncdepth \$1-syncdepth-r sync_depth
-0 -6 0 10 -204793 -1 -1 0 256;
+0 -6 0 10 -204793 -1 -1 2 256;
 #X obj 174 244 nbx 5 14 0 100 0 0 \$0-syncdecay \$1-syncdecay-r sync_decay
-0 -6 0 10 -204793 -1 -1 46 256;
+0 -6 0 10 -204793 -1 -1 100 256;
 #X obj 244 247 hsl 50 8 0 0.5 0 0 \$0-pw \$1-pw-r p/w -2 -6 0 10 -262144
--258113 -1 2400 1;
+-258113 -1 4900 1;
 #X obj 182 119 cnv 15 195 110 empty empty filter 5 12 0 10 -66577 -257985
 0;
 #X obj 188 152 vsl 8 50 0 2000 0 1 \$0-filtatt \$1-filtatt-r attack
@@ -36,13 +36,13 @@
 0 -8 1 9 -262144 -1 -191407 800 1;
 #X floatatom 225 208 5 0 0 0 - - -;
 #X obj 264 152 vsl 8 50 0 127 0 1 \$0-filtenv \$1-filtenv-r env 0 -8
-1 9 -262144 -1 -191407 2800 1;
+1 9 -262144 -1 -191407 3300 1;
 #X floatatom 264 208 5 0 0 0 - - -;
 #X obj 302 152 vsl 8 50 0 127 0 1 \$0-cutoff \$1-cutoff-r cutoff 0
--8 1 9 -262144 -1 -191407 3000 1;
+-8 1 9 -262144 -1 -191407 1300 1;
 #X floatatom 302 208 5 0 0 0 - - -;
 #X obj 341 152 vsl 8 50 0.04 4 1 0 \$0-res \$1-res-r res 0 -8 1 9 -262144
--1 -191407 600 1;
+-1 -191407 1200 1;
 #X floatatom 340 209 5 0 0 0 - - -;
 #X obj 435 490 line~;
 #X msg 435 468 \$1 50;
@@ -56,7 +56,7 @@
 -262144 -1 -191407 0 1;
 #X floatatom 109 208 5 0 0 0 - - -;
 #X obj 145 152 vsl 8 50 5 500 1 1 \$0-dec \$1-dec-r decay 0 -8 1 9
--262144 -1 -191407 4000 1;
+-262144 -1 -191407 4400 1;
 #X floatatom 145 208 5 0 0 0 - - -;
 #X obj 487 154 r \$0-syncdepth;
 #X obj 500 178 r \$0-syncdecay;
@@ -70,7 +70,7 @@
 #X obj 554 305 r \$0-pw;
 #X obj 414 122 spigot;
 #X obj 413 55 unpack f f f;
-#X obj 392 646 hip~ 5;
+#X obj 395 652 hip~ 5;
 #X floatatom 504 104 5 0 0 0 - - -;
 #X obj 630 538 *~;
 #X obj 386 253 mtof~;

@@ -6,7 +6,7 @@
 #X floatatom 69 50 3 0 105 3 fb #0-feedback.r #0-feedback.s;
 #X obj 211 203 / 100;
 #X obj 24 36 hradio 9 1 1 8 \$0-delbeat.s \$0-delbeat.s empty 0 -8
-0 8 -141632 -262144 -1 6;
+0 8 -141632 -262144 -1 2;
 #X obj 12 381 hip~ 5;
 #X obj 171 232 inlet~ external-mod;
 #N canvas 0 23 450 300 delay-block 0;
@@ -16,22 +16,23 @@
 #X obj 45 227 outlet~;
 #N canvas 840 57 600 400 delay-writer 0;
 #X obj 96 107 inlet~;
-#X obj 95 260 outlet~;
+#X obj 95 276 outlet~;
 #X obj 173 110 inlet;
-#X floatatom 263 199 5 0 0 0 - - -;
-#X obj 180 259 delwrite~ \$0-delay 2000;
-#X obj 128 219 hip~ 100;
-#X obj 127 190 clip~ -1 1;
-#X obj 127 163 *~;
+#X obj 158 277 delwrite~ \$0-delay 2000;
+#X obj 158 243 hip~ 100;
+#X obj 158 167 *~;
+#X obj 372 171 clip~ -1 1;
+#X obj 158 189 tanh~;
+#X obj 289 111 inlet;
 #X connect 0 0 1 0;
-#X connect 0 0 7 0;
-#X connect 2 0 7 1;
-#X connect 3 0 5 1;
-#X connect 5 0 4 0;
-#X connect 6 0 5 0;
-#X connect 7 0 6 0;
+#X connect 0 0 5 0;
+#X connect 2 0 5 1;
+#X connect 4 0 3 0;
+#X connect 5 0 7 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 1;
 #X restore 47 163 pd delay-writer;
-#N canvas 1093 559 280 330 delay-reader 0;
+#N canvas 1093 548 280 330 delay-reader 0;
 #X obj 96 107 inlet~;
 #X obj 76 289 outlet~;
 #X obj 112 163 inlet~;
@@ -43,15 +44,17 @@
 #X connect 4 0 3 1;
 #X restore 47 131 pd delay-reader;
 #X obj 252 169 block~ 1;
+#X obj 271 66 inlet;
 #X connect 0 0 5 0;
 #X connect 1 0 4 1;
 #X connect 2 0 5 1;
 #X connect 4 0 3 0;
 #X connect 5 0 4 0;
+#X connect 7 0 4 2;
 #X restore 46 300 pd delay-block;
 #X f 28;
-#X obj 27 83 hsl 67 18 0 1 0 1 \$0-mix.s \$0-mix.r mix 2 9 0 10 -225271
--1 -1 5404 1;
+#X obj 27 104 hsl 67 18 0 1 0 1 \$0-mix.s \$0-mix.r mix 2 9 0 10 -225271
+-1 -1 4000 1;
 #X obj 12 353 *~;
 #X obj 44 353 *~;
 #X msg 83 348 1 \$1;
@@ -76,6 +79,7 @@
 #X obj 237 91 param-label \$0 mix;
 #X obj 52 111 store.param \$0 delbeat;
 #X obj 52 131 store.param \$0 feedback;
+#X obj 52 151 store.param \$0 hipass;
 #X restore 120 23 pd store.state;
 #X obj 217 23 r mstr-ms;
 #N canvas 458 410 718 374 beat-intervals 0;
@@ -120,6 +124,13 @@
 #X obj 67 180 r \$0-delms.s;
 #X msg 67 202 \$1 200;
 #X obj 83 323 r \$0-mix.s;
+#X obj 329 182 r \$0-hipass.s;
+#X msg 329 206 \$1 200;
+#X obj 329 229 line;
+#X floatatom 24 84 6 0 1000 1 hpass #0-hipass.r #0-hipass.s;
+#X obj 371 28 loadbang;
+#X obj 371 59 \$0;
+#X msg 371 80 \; \$1-hipass.r 300 \;;
 #X connect 1 0 9 1;
 #X connect 2 0 9 0;
 #X connect 2 0 11 0;
@@ -138,4 +149,8 @@
 #X connect 21 0 1 0;
 #X connect 22 0 13 0;
 #X connect 22 0 12 1;
-#X coords 0 -1 1 1 80 85 1 20 20;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 25 0 9 3;
+#X connect 28 0 29 0;
+#X coords 0 -1 1 1 80 106 1 20 20;

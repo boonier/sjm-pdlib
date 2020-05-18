@@ -1,38 +1,33 @@
-#N canvas 424 23 865 799 10;
-#X obj -156 366 freeverb~;
-#X msg 25 42 roomsize \$1;
-#X msg 25 87 damping \$1;
-#X msg 25 131 width \$1;
-#X msg 25 175 wet \$1;
-#X msg 28 265 dry \$1;
-#X msg -93 365 print;
-#X msg 21 349 freeze \$1;
-#X msg 21 372 bypass \$1;
-#X obj 124 197 tgl 15 0 \$0-bypass \$1-bypass-r B 6 8 0 10 -262144
+#N canvas 360 23 865 799 10;
+#X obj 144 386 freeverb~;
+#X msg 15 122 roomsize \$1;
+#X msg 15 167 damping \$1;
+#X msg 15 211 width \$1;
+#X msg 15 255 wet \$1;
+#X msg 15 347 dry \$1;
+#X msg 207 385 print;
+#X msg 15 369 freeze \$1;
+#X msg 15 392 bypass \$1;
+#X obj 121 196 tgl 15 0 \$0-bypass.s \$0-bypass.r B 5 8 0 10 -262144
 -1 -1 0 1;
-#X obj 106 197 tgl 15 0 \$0-freeze \$1-freeze-r F 6 8 0 10 -262144
+#X obj 103 196 tgl 15 0 \$0-freeze.s \$0-freeze.r F 5 8 0 10 -262144
 -1 -1 0 1;
-#X obj 107 176 hsl 60 18 0 1 0 1 \$0-mix \$1-mix-r mix 2 9 0 10 -225271
--1 -1 700 0;
-#X obj 107 156 hsl 60 18 0 1 0 1 \$0-width \$1-width-r width 2 9 0
-10 -262131 -1 -1 4500 0;
-#X obj 107 136 hsl 60 18 0 1 0 1 \$0-damp \$1-damp-r damping 2 9 0
-10 -261689 -1 -1 5900 0;
-#X obj 107 116 hsl 60 18 0.11 1.1 0 1 \$0-size \$1-size-r roomsize
-2 9 0 10 -261689 -1 -1 2200 0;
-#X floatatom 7 23 3 0 0 0 - - -;
-#X floatatom 7 68 3 0 0 0 - - -;
-#X floatatom 7 113 3 0 0 0 - - -;
-#X floatatom 7 156 3 0 0 0 - - -;
-#X floatatom 7 205 3 0 0 0 - - -;
-#X obj -165 248 inlet~ L;
-#X obj -98 248 inlet~ R;
-#X obj -163 463 outlet~ L;
-#X obj -95 463 outlet~ R;
-#X obj -160 406 hip~ 5;
-#X obj -101 404 hip~ 5;
-#X msg 31 215 1 \$1;
-#X obj 31 242 -;
+#X obj 106 176 hsl 60 18 0 1 0 1 \$0-mix.s \$0-mix.r 0.542373 2 9 0
+10 -225271 -1 -1 3200 0;
+#X obj 106 156 hsl 60 18 0 1 0 1 \$0-width.s \$0-width.r width 2 9
+0 10 -262131 -1 -1 3600 0;
+#X obj 106 136 hsl 60 18 0 1 0 1 \$0-damp.s \$0-damp.r damping 2 9
+0 10 -261689 -1 -1 3700 0;
+#X obj 106 116 hsl 60 18 0.11 1.1 0 1 \$0-size.s \$0-size.r size 2
+9 0 10 -261689 -1 -1 2000 0;
+#X obj 135 268 inlet~ L;
+#X obj 202 268 inlet~ R;
+#X obj 137 483 outlet~ L;
+#X obj 205 483 outlet~ R;
+#X obj 140 426 hip~ 5;
+#X obj 199 424 hip~ 5;
+#X msg 15 307 1 \$1;
+#X obj 15 327 -;
 #N canvas 881 296 450 300 admin 0;
 #X obj 29 67 auto \$0-size \$1-size-r;
 #X obj 29 91 auto \$0-damp \$1-damp-r;
@@ -40,9 +35,36 @@
 #X obj 29 139 auto \$0-mix \$1-mix-r;
 #X obj 29 163 auto \$0-freeze \$1-freeze-r;
 #X obj 29 187 auto \$0-bypass \$1-bypass-r;
-#X restore 212 110 pd admin;
-#X connect 0 0 24 0;
-#X connect 0 1 25 0;
+#X restore 212 130 pd admin;
+#N canvas 640 300 725 391 store.state 0;
+#N canvas 81 45 329 237 read.write 0;
+#X obj 74 111 savestate;
+#X obj 74 91 r \$0-to.savestate;
+#X obj 125 131 s \$0-savestate.right;
+#X text 78 33 send and receive lists from the individual abstractions
+, f 27;
+#X obj 74 171 s \$0-savestate.left;
+#X obj 74 131 t a b;
+#X obj 101 151 s \$0-stop.loadbang;
+#X connect 0 0 5 0;
+#X connect 0 1 2 0;
+#X connect 1 0 0 0;
+#X connect 5 0 4 0;
+#X connect 5 1 6 0;
+#X restore 52 41 pd read.write;
+#X obj 52 131 store.param \$0 width;
+#X obj 52 151 store.param \$0 mix;
+#X obj 52 91 store.param \$0 size;
+#X obj 52 111 store.param \$0 damp;
+#X obj 237 91 param-label \$0 size;
+#X obj 237 111 param-label \$0 damp;
+#X obj 237 131 param-label \$0 width;
+#X obj 237 151 param-label \$0 mix;
+#X obj 52 171 store.param \$0 freeze;
+#X obj 52 191 store.param \$0 bypass;
+#X restore 212 103 pd store.state;
+#X connect 0 0 19 0;
+#X connect 0 1 20 0;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
@@ -53,19 +75,15 @@
 #X connect 8 0 0 0;
 #X connect 9 0 8 0;
 #X connect 10 0 7 0;
-#X connect 11 0 18 0;
-#X connect 11 0 26 0;
+#X connect 11 0 21 0;
 #X connect 11 0 4 0;
 #X connect 12 0 3 0;
-#X connect 12 0 17 0;
 #X connect 13 0 2 0;
-#X connect 13 0 16 0;
 #X connect 14 0 1 0;
-#X connect 14 0 15 0;
-#X connect 20 0 0 0;
-#X connect 21 0 0 1;
-#X connect 24 0 22 0;
-#X connect 25 0 23 0;
-#X connect 26 0 27 0;
-#X connect 27 0 5 0;
+#X connect 15 0 0 0;
+#X connect 16 0 0 1;
+#X connect 19 0 17 0;
+#X connect 20 0 18 0;
+#X connect 21 0 22 0;
+#X connect 22 0 5 0;
 #X coords 0 -1 1 1 72 116 1 100 100;
