@@ -1,2 +1,2 @@
-*.csd linguist-detectable=false
-*.js linguist-detectable=true
+*.csd linguist-detectable=true
+*.pd linguist-detectable=true
