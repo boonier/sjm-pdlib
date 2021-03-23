@@ -1,15 +1,17 @@
-#N canvas 0 23 454 304 10;
-#X obj 138 92 r reset;
-#X msg 54 136 0;
-#X obj 53 92 inlet;
-#X obj 54 204 outlet;
-#X obj 163 158 mod \$1;
-#X obj 85 160 + 1;
-#X obj 53 160 f;
-#X obj 196 92 inlet;
-#X obj 273 91 inlet;
+#N canvas 932 492 454 304 10;
+#X obj 98 75 r reset;
+#X msg 98 143 0;
+#X obj 20 73 inlet;
+#X obj 83 204 outlet;
+#X obj 145 180 mod \$1;
+#X obj 115 180 + 1;
+#X obj 83 180 f;
+#X obj 178 75 inlet;
+#X obj 276 75 inlet;
 #X text 322 100 <mod size> <step>;
-#X obj 54 114 route reset;
+#X obj 20 100 route reset;
+#X obj 25 134 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 0 0 1 0;
 #X connect 1 0 6 1;
 #X connect 2 0 10 0;
@@ -19,5 +21,6 @@
 #X connect 6 0 5 0;
 #X connect 7 0 4 1;
 #X connect 8 0 5 1;
+#X connect 10 0 11 0;
 #X connect 10 0 1 0;
 #X connect 10 1 6 0;

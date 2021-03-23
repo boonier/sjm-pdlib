@@ -1,10 +1,10 @@
-#N canvas 703 336 1217 692 10;
+#N canvas 223 186 1217 692 10;
 #X obj 313 267 cos~;
 #X obj 313 290 +~ 1;
 #X obj 400 211 +~ 0.25;
 #X obj 400 266 cos~;
 #X obj 400 289 +~ 1;
-#X obj 368 571 outlet~;
+#X obj 369 565 outlet~;
 #X obj 499 210 +~ 0.25;
 #X obj 499 265 cos~;
 #X obj 499 288 +~ 1;
@@ -21,7 +21,7 @@
 #X obj 442 162 line~;
 #X obj 442 137 pack 0 50;
 #X obj 313 192 phasor~;
-#X obj 549 565 outlet~;
+#X obj 540 564 outlet~;
 #X text 679 209 modulation;
 #X text 441 94 frequency;
 #X obj 599 120 block~ 1;
@@ -31,11 +31,11 @@
 #X obj 499 370 vd~ \$0-chorus;
 #X obj 594 370 vd~ \$0-chorus;
 #X obj 107 137 hsl 67 18 0 100 0 1 \$0-depth.s \$0-depth.r depth 2
-9 0 10 -90603 -191407 -262144 600 1;
+9 0 10 -90603 -191407 -262144 1730 1;
 #X obj 107 157 hsl 67 18 0 1 0 1 \$0-mix.s \$0-mix.r mix 2 9 0 10 -225271
 -1 -1 4800 1;
 #X obj 107 117 hsl 67 18 0.0001 20 1 1 \$0-freq.s \$0-freq.r freq 2
-9 0 10 -152832 -191407 -262144 700 1;
+9 0 10 -152832 -191407 -262144 3013 1;
 #X msg 461 437 1 \$1;
 #X obj 461 462 -;
 #X obj 358 480 *~;
@@ -68,6 +68,8 @@
 #X obj 679 254 r \$0-depth.s;
 #X obj 442 116 r \$0-freq.s;
 #X obj 460 412 r \$0-mix.s;
+#X obj 369 533 hip~ 5;
+#X obj 540 531 hip~ 5;
 #X connect 0 0 1 0;
 #X connect 1 0 18 0;
 #X connect 2 0 3 0;
@@ -104,13 +106,15 @@
 #X connect 34 0 35 0;
 #X connect 35 0 39 1;
 #X connect 35 0 38 1;
-#X connect 36 0 5 0;
-#X connect 37 0 22 0;
-#X connect 38 0 5 0;
-#X connect 39 0 22 0;
+#X connect 36 0 44 0;
+#X connect 37 0 45 0;
+#X connect 38 0 44 0;
+#X connect 39 0 45 0;
 #X connect 41 0 14 0;
 #X connect 42 0 20 0;
 #X connect 43 0 34 0;
 #X connect 43 0 37 1;
 #X connect 43 0 36 1;
+#X connect 44 0 5 0;
+#X connect 45 0 22 0;
 #X coords 0 -1 1 1 80 80 1 100 100;

@@ -1,9 +1,9 @@
-#N canvas 673 444 678 285 10;
+#N canvas 643 354 678 285 10;
 #X obj 228 43 inlet;
 #X obj 228 97 text set \$0-preset;
-#X obj 376 169 text get \$0-preset;
+#X obj 389 161 text get \$0-preset;
 #X obj 376 235 outlet;
-#X msg 405 141 0;
+#X msg 418 133 0;
 #N canvas 938 299 502 321 store.state 0;
 #N canvas 81 45 329 237 read.write 0;
 #X obj 74 111 savestate;
@@ -23,16 +23,19 @@
 #X obj 51 57 store.text \$0 preset;
 #X restore 517 44 pd store.state;
 #X obj 228 70 route program_data, f 21;
-#X obj 376 213 list trim;
-#X obj 376 192 list prepend program_data_set;
+#X obj 389 205 list trim;
+#X obj 389 184 list prepend program_data_set;
 #X obj 334 123 print;
 #X obj 351 97 spig;
 #X obj 517 66 text define \$0-preset;
-#X obj 405 120 loadbang;
-#X obj 122 52 bng 12 250 50 0 \$0-save.s \$0-save.r empty 17 7 0 10
+#X obj 418 112 loadbang;
+#X obj 115 52 bng 12 250 50 0 \$0-save.s \$0-save.r empty 17 7 0 10
 -261234 -1 -1;
 #X obj 376 47 r \$0-save.s;
 #X msg 376 79 program_data_get;
+#X obj 129 52 bng 12 250 50 0 \$0-recall.s \$0-recall.r empty 17 7
+0 10 -204786 -1 -1;
+#X obj 474 112 r \$0-recall.s;
 #X connect 0 0 6 0;
 #X connect 2 0 8 0;
 #X connect 4 0 2 0;
@@ -44,4 +47,5 @@
 #X connect 12 0 4 0;
 #X connect 14 0 15 0;
 #X connect 15 0 3 0;
-#X coords 0 -1 1 1 86 16 1 50 50;
+#X connect 17 0 4 0;
+#X coords 0 -1 1 1 93 16 1 50 50;
